@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(aruco_explorer)
+project(precision_landing)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 20)
@@ -25,13 +25,13 @@ add_executable(precision_landing_node
   src/test.cpp
 )
 
-target_include_directories(aruco_explorer_node PRIVATE
+target_include_directories(precision_landing_node PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
   ${OpenCV_INCLUDE_DIRS}
 )
 
-ament_target_dependencies(aruco_explorer_node
+ament_target_dependencies(precision_landing_node
   rclcpp
   behaviortree_cpp
   sensor_msgs
@@ -41,12 +41,12 @@ ament_target_dependencies(aruco_explorer_node
   px4_msgs
 )
 
-target_link_libraries(aruco_explorer_node
+target_link_libraries(precision_landing_node
   ${OpenCV_LIBS}
 )
 
 install(TARGETS
-  aruco_explorer_node
+  precision_landing_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
