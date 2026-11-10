@@ -1,0 +1,13 @@
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <ReactiveSequence name="RootSequence">
+            <Fallback name="LandingControl">
+                <Sequence name="LandingSequence">
+                    <IsMarkerVisible name="CheckAruco"/>
+                    <ExploreAndSearch name="AlignAndLand"/>
+                </Sequence>
+                <ExploreAndSearch name="SearchArucoTask"/>
+            </Fallback>
+        </ReactiveSequence>
+    </BehaviorTree>
+</root>
